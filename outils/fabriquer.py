@@ -254,24 +254,52 @@ def etabli():
 
 # ---------------------------------------------------------------- pied
 def pied():
-    # Le ciel de Kemet passe de l'aube au jour, au crépuscule puis à la nuit.
-    L, H = 1280, 120
-    ciels = ["#f6c48f;#7cc4f0;#e2775a;#0b1426;#f6c48f", "#fbe3c4;#d6efff;#5c2a2c;#070d1a;#fbe3c4"]
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{L}" height="{H}" viewBox="0 0 {L} {H}" role="img" aria-label="Merci de la visite">
-<style>.o{{animation:v 6s ease-in-out infinite}}@keyframes v{{0%,100%{{transform:translateX(0)}}50%{{transform:translateX(-30px)}}}}{MOINS_DE_MOUVEMENT}</style>
-<defs><linearGradient id="c" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#f6c48f"><animate attributeName="stop-color" values="{ciels[0]}" dur="24s" repeatCount="indefinite"/></stop>
-<stop offset="1" stop-color="#fbe3c4"><animate attributeName="stop-color" values="{ciels[1]}" dur="24s" repeatCount="indefinite"/></stop>
-</linearGradient>
-<clipPath id="k"><rect width="{L}" height="{H}" rx="20"/></clipPath></defs>
+    # Répond à la bannière : même nuit étoilée, même ligne de lumière, les quatre projets en signature.
+    L, H = 1280, 210
+    import random
+    random.seed(11)
+    etoiles = "".join(
+        f'<circle cx="{random.randint(0, L)}" cy="{random.randint(0, H-30)}" r="{random.choice([0.8, 1, 1.2, 1.5])}" '
+        f'class="e" style="animation-delay:{random.uniform(0, 6):.1f}s"/>'
+        for _ in range(45)
+    )
+    arrets = "".join(
+        f'<stop offset="{i/(len(SPECTRE)*2-1):.3f}" stop-color="{c}"/>'
+        for i, c in enumerate(SPECTRE + SPECTRE)
+    )
+    T, x0 = 64, 870
+    tuiles = "".join(
+        f'<g class="f" style="animation-delay:{i*0.7:.1f}s">'
+        f'<rect x="{x0 + i*(T+22) - 1}" y="57" width="{T+2}" height="{T+2}" rx="15" fill="#151c2b" stroke="#2a3550"/>'
+        f'{tuile(k, x0 + i*(T+22), 58, T)}</g>'
+        for i, k in enumerate(["neofrag", "kemet", "fsr", "lumenkod"])
+    )
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{L}" height="{H}" viewBox="0 0 {L} {H}" role="img" aria-label="Merci de la visite, à bientôt sur l'un des projets">
+<style>
+.e{{fill:#cfe0ff;animation:sc 6s ease-in-out infinite}}
+@keyframes sc{{0%,100%{{opacity:.15}}50%{{opacity:.8}}}}
+.f{{animation:fl 7s ease-in-out infinite}}
+@keyframes fl{{0%,100%{{transform:translateY(0)}}50%{{transform:translateY(-5px)}}}}
+{MOINS_DE_MOUVEMENT}
+</style>
+<defs>
+<linearGradient id="fond" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{FOND2}"/><stop offset="1" stop-color="{FOND}"/></linearGradient>
+<radialGradient id="halo" cx=".18" cy=".45" r=".5"><stop offset="0" stop-color="{OR}" stop-opacity=".12"/><stop offset="1" stop-color="{FOND}" stop-opacity="0"/></radialGradient>
+<linearGradient id="spectre" x1="0" y1="0" x2="1" y2="0" spreadMethod="repeat">{arrets}
+<animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="-1 0" dur="9s" repeatCount="indefinite"/></linearGradient>
+<filter id="flou" x="-10%" y="-400%" width="120%" height="900%"><feGaussianBlur stdDeviation="7"/></filter>
+<clipPath id="k"><rect width="{L}" height="{H}" rx="22"/></clipPath>
+</defs>
 <g clip-path="url(#k)">
-<rect width="{L}" height="{H}" fill="url(#c)"/>
-<g class="o" fill="none" stroke="#2b5d8a" stroke-opacity=".55" stroke-width="2.5">
-<path d="M-40 92 Q 40 82 120 92 T 280 92 T 440 92 T 600 92 T 760 92 T 920 92 T 1080 92 T 1240 92 T 1400 92"/>
-<path d="M-40 106 Q 40 96 120 106 T 280 106 T 440 106 T 600 106 T 760 106 T 920 106 T 1080 106 T 1240 106 T 1400 106" stroke-opacity=".35"/>
-</g>
-<rect x="420" y="26" width="440" height="42" rx="21" fill="{FOND}" fill-opacity=".72"/>
-<text x="640" y="53" text-anchor="middle" font-family="{SANS}" font-size="18" fill="{TEXTE}">Merci de la visite — à bientôt sur l'un des projets</text>
+<rect width="{L}" height="{H}" fill="url(#fond)"/>
+<rect width="{L}" height="{H}" fill="url(#halo)"/>
+{etoiles}
+<text x="80" y="92" font-family="{SANS}" font-size="46" font-weight="800" letter-spacing="-1" fill="{TEXTE}">Merci de la visite.</text>
+<text x="82" y="134" font-family="{SANS}" font-size="21" fill="{TEXTE2}">À bientôt sur l'un des projets.</text>
+<text x="{x0 + (4*T + 3*22)/2:.0f}" y="156" text-anchor="middle" font-family="{MONO}" font-size="13" letter-spacing="2" fill="{TEXTE3}">FAIT EN FRANCE · EN FRANÇAIS</text>
+{tuiles}
+<rect x="0" y="{H-8}" width="{L}" height="8" fill="url(#spectre)" filter="url(#flou)" opacity=".9"/>
+<rect x="0" y="{H-6}" width="{L}" height="6" fill="url(#spectre)"/>
 </g>
 </svg>
 '''
