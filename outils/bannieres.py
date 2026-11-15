@@ -16,6 +16,7 @@ FORMATS = {
     "x-twitter-1500x500": (1500, 500, 0.27),
     "linkedin-1584x396": (1584, 396, 0.30),
     "discord-680x240": (680, 240, 0.28),
+    "github-1280x640": (1280, 640, 0.24),  # aperçu de partage du dépôt du profil (moins de 1 Mo)
     "youtube-2560x1440": (2560, 1440, 0.11),  # seule la zone centrale 1546x423 est sûre partout
 }
 RAPPORT_LARGEUR = 4.02  # largeur de « Luandre » en Tektur ≈ 4,02 × corps (mesuré sur la bannière du README)
