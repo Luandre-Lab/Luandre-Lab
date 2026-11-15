@@ -16,7 +16,7 @@ pas à pas. Le fil rouge : reprendre ce qui en vaut la peine et le faire renaît
 
 <img src="assets/fiche.svg" width="100%" alt="Fiche du personnage : développeur solo ; PHP, TypeScript, C#, Go ; Godot 4 .NET, Next.js, PostgreSQL, MariaDB, Docker ; premiers pas : NeoFrag, le CMS que je fais renaître aujourd'hui.">
 
-## Les quêtes en cours
+## 🗺️ Les quêtes en cours
 
 <p align="center">
 <a href="https://github.com/NeoFragReborn/neofrag"><img src="assets/carte-neofrag.svg" width="49%" alt="NeoFrag Reborn — le CMS PHP libre des communautés. Publié, libre."></a>
@@ -34,7 +34,7 @@ pas à pas. Le fil rouge : reprendre ce qui en vaut la peine et le faire renaît
 > Kemet, Friendly Strike Reborn et LumenKod se construisent pour l'instant en privé : ils arriveront ici quand
 > ils seront prêts à être montrés.
 
-## Ce qu'il y a sur l'établi
+## 🧰 Ce qu'il y a sur l'établi
 
 <img src="assets/etabli.svg" width="100%" alt="L'établi : PHP, TypeScript, C#, Go ; Godot 4 .NET, Next.js, WPF, Hono ; PostgreSQL, MariaDB, Redis ; Linux, Docker, Cloudflare, Discord.">
 
@@ -46,6 +46,13 @@ pas à pas. Le fil rouge : reprendre ce qui en vaut la peine et le faire renaît
 <a href="https://github.com/NeoFrag/NeoFrag"><img src="https://img.shields.io/badge/le%20projet%20d'origine-NeoFrag-1fb39f?style=flat-square&labelColor=0b1426&logo=github&logoColor=white" alt="Le projet d'origine : NeoFrag"></a>
 <a href="https://github.com/NeoFragReborn/neofrag"><img src="https://img.shields.io/badge/aujourd'hui-NeoFrag%20Reborn-2ee6d6?style=flat-square&labelColor=0b1426&logo=github&logoColor=white" alt="Aujourd'hui : NeoFrag Reborn"></a>
 </p>
+
+## 🌍 In English
+
+I'm **Luandre**, a solo developer from France. I bring back what is worth it: **NeoFrag Reborn**, the free PHP CMS for
+communities that was my first step in development; **Kemet**, a social management game in Ramesside Egypt;
+**Friendly Strike Reborn**, Friendly Strike rebuilt from scratch with modern tech; and **LumenKod**, my company, still
+being set up. Everything I make is in French, from the interface to the code comments.
 
 <br>
 
