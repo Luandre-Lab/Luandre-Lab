@@ -11,17 +11,17 @@
 ### Bonjour, moi c'est Luandre 👋
 
 Développeur solo, je travaille sur ce qui me tient à cœur : un **CMS libre** pour les communautés de joueurs,
-un **jeu de gestion** dans l'Égypte antique, le **retour de mon premier jeu** et une **entreprise** qui se monte
+un **jeu de gestion** dans l'Égypte antique, le **remake de Friendly Strike** et une **entreprise** qui se monte
 pas à pas. Le fil rouge : reprendre ce qui en vaut la peine et le faire renaître, proprement, en français.
 
-<img src="assets/fiche.svg" width="100%" alt="Fiche du personnage : développeur solo ; PHP, TypeScript, C#, Go ; Godot 4 .NET, Next.js, PostgreSQL, MariaDB, Docker ; premier jeu : Friendly Strike, en 2009.">
+<img src="assets/fiche.svg" width="100%" alt="Fiche du personnage : développeur solo ; PHP, TypeScript, C#, Go ; Godot 4 .NET, Next.js, PostgreSQL, MariaDB, Docker ; premiers pas : NeoFrag, le CMS que je fais renaître aujourd'hui.">
 
 ## Les quêtes en cours
 
 <p align="center">
 <a href="https://github.com/NeoFragReborn/neofrag"><img src="assets/carte-neofrag.svg" width="49%" alt="NeoFrag Reborn — le CMS PHP libre des communautés. Publié, libre."></a>
 <img src="assets/carte-kemet.svg" width="49%" alt="Kemet — jeu de gestion social par navigateur dans l'Égypte de Ramsès. En développement.">
-<img src="assets/carte-fsr.svg" width="49%" alt="Friendly Strike Reborn — le retour de mon jeu de 2009, shooter 2D en arène. En développement.">
+<img src="assets/carte-fsr.svg" width="49%" alt="Friendly Strike Reborn — Friendly Strike recréé de zéro en technos modernes, shooter 2D en arène. En développement.">
 <img src="assets/carte-lumenkod.svg" width="49%" alt="LumenKod — mon entreprise : sites web, logiciels Windows, bots Discord. En construction.">
 </p>
 
@@ -54,8 +54,8 @@ Des projets plus petits, rangés pour l'instant :
 <summary><b>Là où tout a commencé</b></summary>
 <br>
 
-**Friendly Strike**, mon premier jeu, en 2009. Dix-sept ans plus tard, je le refais sur un moteur
-neuf (Godot 4 .NET), avec le jeu en ligne en chantier.
+Mes premiers pas dans le développement, je les ai faits sur **NeoFrag**. Aujourd'hui, je le fais renaître :
+c'est **NeoFrag Reborn**, repris et modernisé, toujours libre.
 
 </details>
 

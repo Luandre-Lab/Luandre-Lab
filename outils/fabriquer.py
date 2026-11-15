@@ -133,7 +133,7 @@ def fiche():
         ("Terrain", "mon propre serveur Linux, des bots Discord, Cloudflare"),
         ("Quêtes", "NeoFrag Reborn · Kemet · Friendly Strike Reborn · LumenKod"),
         ("Signe", "tout en français, de l'interface aux commentaires du code"),
-        ("Premier jeu", "Friendly Strike, en 2009"),
+        ("Premiers pas", "NeoFrag, le CMS que je fais renaître aujourd'hui"),
     ]
     y0, pas = 140, 48
     H = y0 + pas * len(lignes) + 18
@@ -212,9 +212,9 @@ def cartes():
         tuile("kemet", 36, 36, 84)))
     ecrire("carte-fsr.svg", carte(
         "fs", "Friendly Strike Reborn", ROUGE, "EN DÉVELOPPEMENT", ROUGE,
-        ["Le retour de mon jeu de 2009 : shooter 2D",
-         "en arène, manches et phase d'achat, jusqu'à",
-         "4 joueurs sur un PC — et le jeu en ligne en cours."],
+        ["Friendly Strike recréé de zéro en technos",
+         "modernes : shooter 2D en arène, manches et",
+         "phase d'achat, à 4 sur un PC, en ligne en cours."],
         ["C#", "Godot 4 .NET", ".NET 10"],
         tuile("fsr", 36, 36, 84)))
     ecrire("carte-lumenkod.svg", carte(
