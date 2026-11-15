@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="120" viewBox="0 0 1280 120" role="img" aria-label="Merci de la visite">
+<style>.o{animation:v 6s ease-in-out infinite}@keyframes v{0%,100%{transform:translateX(0)}50%{transform:translateX(-30px)}}@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
+<defs><linearGradient id="c" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#f6c48f"><animate attributeName="stop-color" values="#f6c48f;#7cc4f0;#e2775a;#0b1426;#f6c48f" dur="24s" repeatCount="indefinite"/></stop>
+<stop offset="1" stop-color="#fbe3c4"><animate attributeName="stop-color" values="#fbe3c4;#d6efff;#5c2a2c;#070d1a;#fbe3c4" dur="24s" repeatCount="indefinite"/></stop>
+</linearGradient>
+<clipPath id="k"><rect width="1280" height="120" rx="20"/></clipPath></defs>
+<g clip-path="url(#k)">
+<rect width="1280" height="120" fill="url(#c)"/>
+<g class="o" fill="none" stroke="#2b5d8a" stroke-opacity=".55" stroke-width="2.5">
+<path d="M-40 92 Q 40 82 120 92 T 280 92 T 440 92 T 600 92 T 760 92 T 920 92 T 1080 92 T 1240 92 T 1400 92"/>
+<path d="M-40 106 Q 40 96 120 106 T 280 106 T 440 106 T 600 106 T 760 106 T 920 106 T 1080 106 T 1240 106 T 1400 106" stroke-opacity=".35"/>
+</g>
+<rect x="420" y="26" width="440" height="42" rx="21" fill="#0b1426" fill-opacity=".72"/>
+<text x="640" y="53" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" fill="#eef2f8">Merci de la visite — à bientôt sur l'un des projets</text>
+</g>
+</svg>
