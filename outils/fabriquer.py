@@ -18,6 +18,13 @@ SANS = "'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif"
 MONO = "'JetBrains Mono','Cascadia Code',Consolas,'SFMono-Regular',Menlo,monospace"
 
 
+def police_tektur():
+    # Tektur (licence OFL, outils/polices/OFL-Tektur.txt), réduite aux lettres de « Luandre » et embarquée :
+    # chaque visiteur la voit, même sans l'avoir installée.
+    donnees = base64.b64encode((RACINE / "outils" / "polices" / "tektur-500-luandre.ttf").read_bytes()).decode()
+    return f'<style>@font-face{{font-family:Tektur;src:url(data:font/ttf;base64,{donnees})}}</style>'
+
+
 def png(nom):
     return "data:image/png;base64," + base64.b64encode((LOGOS / f"{nom}.png").read_bytes()).decode()
 
@@ -112,9 +119,9 @@ def banniere():
 <rect width="{L}" height="{H}" rx="22" fill="url(#halo)"/>
 {etoiles}
 <text x="80" y="92" font-family="{MONO}" font-size="17" letter-spacing="3" fill="{TEXTE3}">DÉVELOPPEUR SOLO · FRANCE</text>
-<text x="74" y="190" font-family="{SANS}" font-size="112" font-weight="800" letter-spacing="-2" fill="{TEXTE}">Luandre</text>
-<rect x="82" y="216" width="478" height="7" rx="3.5" fill="url(#spectre)" filter="url(#flou)" opacity=".9"/>
-<rect x="82" y="216" width="478" height="7" rx="3.5" fill="url(#spectre)"/>
+{police_tektur()}<text x="76" y="190" font-family="Tektur" font-size="112" fill="{TEXTE}">Luandre</text>
+<rect x="82" y="216" width="450" height="7" rx="3.5" fill="url(#spectre)" filter="url(#flou)" opacity=".9"/>
+<rect x="82" y="216" width="450" height="7" rx="3.5" fill="url(#spectre)"/>
 <text x="80" y="266" font-family="{SANS}" font-size="25" fill="{TEXTE2}">Jeux, CMS libre et outils maison.</text>
 <text x="80" y="302" font-family="{SANS}" font-size="19" font-style="italic" fill="{TEXTE3}">Je fais renaître ce qui en vaut la peine.</text>
 <path d="{fil}" fill="none" stroke="#9fb3d6" stroke-opacity=".35" stroke-width="1.5" class="fil"/>
@@ -393,10 +400,11 @@ def debuts():
 """
 
 
-ecrire("banniere.svg", banniere())
-ecrire("fiche.svg", fiche())
-cartes()
-ecrire("etabli.svg", etabli())
-ecrire("atelier.svg", atelier())
-ecrire("debuts.svg", debuts())
-ecrire("pied.svg", pied())
+if __name__ == "__main__":
+    ecrire("banniere.svg", banniere())
+    ecrire("fiche.svg", fiche())
+    cartes()
+    ecrire("etabli.svg", etabli())
+    ecrire("atelier.svg", atelier())
+    ecrire("debuts.svg", debuts())
+    ecrire("pied.svg", pied())
