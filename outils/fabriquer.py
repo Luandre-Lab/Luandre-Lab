@@ -305,8 +305,98 @@ def pied():
 '''
 
 
+# ---------------------------------------------------------------- atelier
+ICONES = {
+    # bulle de discussion traversée par une onde de voix
+    "blah": '<path d="M14 16h36a6 6 0 0 1 6 6v18a6 6 0 0 1-6 6H30l-10 8v-8h-6a6 6 0 0 1-6-6V22a6 6 0 0 1 6-6z" fill="none" stroke="C" stroke-width="3" stroke-linejoin="round"/>'
+            '<path d="M22 27v8M28 24v14M34 28v6M40 25v12" stroke="C" stroke-width="3" stroke-linecap="round"/>',
+    # liste de lecture
+    "lister": '<path d="M12 20h28M12 30h28M12 40h18" stroke="C" stroke-width="3.2" stroke-linecap="round"/>'
+              '<path d="M38 36l14 8-14 8z" fill="C"/>',
+    # barres d'analyse et courbe qui monte
+    "lol": '<path d="M14 50V38M24 50V30M34 50V34M44 50V24" stroke="C" stroke-width="5" stroke-linecap="round" opacity=".45"/>'
+           '<path d="M12 30l12-8 10 5 16-13" fill="none" stroke="C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>'
+           '<circle cx="50" cy="14" r="3.5" fill="C"/>',
+}
+
+
+def petite_carte(x, y, cle, nom, couleur, lignes, etiquettes):
+    l, h = 380, 212
+    icone = ICONES[cle].replace('"C"', f'"{couleur}"')
+    desc = "".join(
+        f'<text x="{x+24}" y="{y+122 + i*27}" font-family="{SANS}" font-size="18" fill="{TEXTE2}">{echapper(t)}</text>'
+        for i, t in enumerate(lignes)
+    )
+    tags, tx = "", x + 24
+    for e in etiquettes:
+        pp, lp = pastille(tx, y + 166, e, couleur, corps=14)
+        tags += pp
+        tx += lp + 8
+    return (
+        f'<rect x="{x}" y="{y}" width="{l}" height="{h}" rx="16" fill="#0c1529" stroke="#22304d"/>'
+        f'<rect x="{x+24}" y="{y+22}" width="64" height="64" rx="15" fill="#151c2b" stroke="#2a3550"/>'
+        f'<g transform="translate({x+24} {y+22})">{icone}</g>'
+        f'<text x="{x+106}" y="{y+62}" font-family="{SANS}" font-size="27" font-weight="700" fill="{TEXTE}">{echapper(nom)}</text>'
+        f'{desc}{tags}'
+    )
+
+
+def atelier():
+    L, H = 1280, 346
+    contenu = (
+        petite_carte(56, 104, "blah", "Blah", SPECTRE[0],
+                     ["Voix et discussion", "sur son propre serveur."], ["Go"])
+        + petite_carte(450, 104, "lister", "Lister", SPECTRE[1],
+                       ["Téléchargeur et convertisseur", "de playlists."], ["C#"])
+        + petite_carte(844, 104, "lol", "LoL-Idea", SPECTRE[5],
+                       ["Théorycraft League of Legends :", "moteur de combat, analyse en direct."], ["C#", "WPF"])
+    )
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{L}" height="{H}" viewBox="0 0 {L} {H}" role="img" aria-label="Au fond de l'atelier : Blah, Lister, LoL-Idea">
+<rect x="1" y="1" width="{L-2}" height="{H-2}" rx="20" fill="{CARTE}" stroke="#22304d"/>
+<text x="56" y="66" font-family="{SANS}" font-size="30" font-weight="700" fill="{TEXTE}">Au fond de l'atelier</text>
+<text x="{L-56}" y="66" text-anchor="end" font-family="{MONO}" font-size="17" fill="{TEXTE3}">des projets plus petits, rangés pour l'instant</text>
+{contenu}
+</svg>
+"""
+
+
+# ---------------------------------------------------------------- débuts
+def debuts():
+    L, H = 1280, 290
+    # Avant : le logo d'origine de NeoFrag ; après : celui de NeoFrag Reborn.
+    avant = (
+        '<clipPath id="arrondi"><rect x="72" y="110" width="104" height="104" rx="22"/></clipPath>'
+        f'<image href="{png("neofrag-origine")}" x="72" y="110" width="104" height="104" clip-path="url(#arrondi)"/>'
+        '<rect x="72" y="110" width="104" height="104" rx="22" fill="none" stroke="#2a3550"/>'
+    )
+    apres = '<circle cx="772" cy="162" r="74" fill="url(#lueur)"/>' + tuile("neofrag", 720, 110, 104)
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{L}" height="{H}" viewBox="0 0 {L} {H}" role="img" aria-label="Là où tout a commencé : mes premiers pas sur NeoFrag, que je fais renaître avec NeoFrag Reborn">
+<style>.fl{{stroke-dasharray:10 9;animation:av 1.6s linear infinite}}@keyframes av{{to{{stroke-dashoffset:-38}}}}{MOINS_DE_MOUVEMENT}</style>
+<defs>
+<linearGradient id="trait" gradientUnits="userSpaceOnUse" x1="532" y1="0" x2="698" y2="0"><stop offset="0" stop-color="#1fb39f"/><stop offset="1" stop-color="{TURQUOISE}"/></linearGradient>
+<radialGradient id="lueur"><stop offset="0" stop-color="{TURQUOISE}" stop-opacity=".35"/><stop offset="1" stop-color="{TURQUOISE}" stop-opacity="0"/></radialGradient>
+</defs>
+<rect x="1" y="1" width="{L-2}" height="{H-2}" rx="20" fill="{CARTE}" stroke="#22304d"/>
+<text x="56" y="66" font-family="{SANS}" font-size="30" font-weight="700" fill="{TEXTE}">Là où tout a commencé</text>
+{avant}
+<text x="200" y="136" font-family="{MONO}" font-size="15" letter-spacing="2" fill="{TEXTE3}">PREMIERS PAS</text>
+<text x="200" y="174" font-family="{SANS}" font-size="32" font-weight="700" fill="{TEXTE}">NeoFrag</text>
+<text x="200" y="206" font-family="{SANS}" font-size="19" fill="{TEXTE2}">mes débuts dans le développement</text>
+<text x="615" y="146" text-anchor="middle" font-family="{MONO}" font-size="14" fill="{TEXTE3}">je le fais renaître</text>
+<path d="M532 162H696" stroke="url(#trait)" stroke-width="3" class="fl"/>
+<path d="M694 154l12 8-12 8z" fill="{TURQUOISE}"/>
+{apres}
+<text x="848" y="136" font-family="{MONO}" font-size="15" letter-spacing="2" fill="{TURQUOISE}">AUJOURD'HUI</text>
+<text x="848" y="174" font-family="{SANS}" font-size="32" font-weight="700" fill="{TEXTE}">NeoFrag Reborn</text>
+<text x="848" y="206" font-family="{SANS}" font-size="19" fill="{TEXTE2}">repris, modernisé, toujours libre</text>
+</svg>
+"""
+
+
 ecrire("banniere.svg", banniere())
 ecrire("fiche.svg", fiche())
 cartes()
 ecrire("etabli.svg", etabli())
+ecrire("atelier.svg", atelier())
+ecrire("debuts.svg", debuts())
 ecrire("pied.svg", pied())

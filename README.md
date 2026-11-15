@@ -38,26 +38,14 @@ pas à pas. Le fil rouge : reprendre ce qui en vaut la peine et le faire renaît
 
 <img src="assets/etabli.svg" width="100%" alt="L'établi : PHP, TypeScript, C#, Go ; Godot 4 .NET, Next.js, WPF, Hono ; PostgreSQL, MariaDB, Redis ; Linux, Docker, Cloudflare, Discord.">
 
-<details>
-<summary><b>Au fond de l'atelier</b></summary>
-<br>
+<img src="assets/atelier.svg" width="100%" alt="Au fond de l'atelier, des projets plus petits rangés pour l'instant : Blah, voix et discussion sur son propre serveur (Go) ; Lister, téléchargeur et convertisseur de playlists (C#) ; LoL-Idea, théorycraft League of Legends : moteur de combat et analyse en direct (C#, WPF).">
 
-Des projets plus petits, rangés pour l'instant :
+<img src="assets/debuts.svg" width="100%" alt="Là où tout a commencé : mes premiers pas dans le développement, sur NeoFrag. Aujourd'hui, je le fais renaître : NeoFrag Reborn, repris, modernisé, toujours libre.">
 
-- **Blah** — voix et discussion sur son propre serveur (Go) ;
-- **Lister** — téléchargeur et convertisseur de playlists (C#) ;
-- **LoL-Idea** — théorycraft League of Legends : données du jeu, moteur de combat, analyse en direct (C#, WPF).
-
-</details>
-
-<details>
-<summary><b>Là où tout a commencé</b></summary>
-<br>
-
-Mes premiers pas dans le développement, je les ai faits sur **NeoFrag**. Aujourd'hui, je le fais renaître :
-c'est **NeoFrag Reborn**, repris et modernisé, toujours libre.
-
-</details>
+<p align="center">
+<a href="https://github.com/NeoFrag/NeoFrag"><img src="https://img.shields.io/badge/le%20projet%20d'origine-NeoFrag-1fb39f?style=flat-square&labelColor=0b1426&logo=github&logoColor=white" alt="Le projet d'origine : NeoFrag"></a>
+<a href="https://github.com/NeoFragReborn/neofrag"><img src="https://img.shields.io/badge/aujourd'hui-NeoFrag%20Reborn-2ee6d6?style=flat-square&labelColor=0b1426&logo=github&logoColor=white" alt="Aujourd'hui : NeoFrag Reborn"></a>
+</p>
 
 <br>
 
